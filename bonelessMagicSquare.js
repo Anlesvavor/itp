@@ -8,28 +8,23 @@ function bonelessMagicSquare(arr){
     let n = arr.length;
     if((n - 3) % 2 == 0){
         arr = insertSort(arr);
-        magicNumber = arr[0] + arr[Math.ceil(n/2)] + arr[n-1];
+        magicNumber = arr[0] + arr[Math.floor(n/2)] + arr[n-1];
         for(let i = 0; i < n; i++){
-            console.log("a: " + arr[i]);
-            console.log("b: " + arr[n- i - 1]);
-            console.log("c: " + arr[Math.ceil(n/2)]);
-            console.log(arr[i] + arr[Math.ceil(n/2)] + arr[n - i - 1]);
-            if(magicNumber != arr[i] + arr[Math.ceil(n/2)] + arr[n - i - 1]){
-                return 2;
+            if(magicNumber != arr[i] + arr[Math.floor(n/2)] + arr[n - i - 1]){
+                return false;
             }
         }
-        return 1;
+        return true;
     } else {
-        return 3;
+        return false;
     }
 }
 
 function insertSort(arr){
     let n = arr.length;
-    for(let i = 1; i <= n; i++){
         let k = arr[i];
         let j = i - 1;
-        while(j > 0 && arr[j] > k){
+        while(j >= 0 && arr[j] > k){
             arr[j + 1] = arr[j];
             j = j - 1;
         }
@@ -37,3 +32,13 @@ function insertSort(arr){
     }
     return arr;
 }
+
+/*
+    for a
+        arr.slice(a)
+        for b
+            arr.splice(b)
+            for c
+                arr.splice(c)
+                a + b + c = Sum && a!=b!=c
+*/
