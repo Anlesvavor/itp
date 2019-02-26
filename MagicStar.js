@@ -12,8 +12,8 @@ function magicStar(arr, n){
             }
         }
     }
-    a = a.filter( r => r.reduce( (s, t) => s + t ) == n);
-    if(a == 0) return null;
+    a = a.filter( r => r.reduce( (s, t) => s + t ) === n);
+    if(a === 0) return null;
     return findBranches(a, findPivot(a, arr), findNumberOfBranches(arr));
 }
 

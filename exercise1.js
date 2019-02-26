@@ -14,7 +14,7 @@ Output: No
 
 */
 
-function ex1(arr, k){
+let ex1 = (arr, k) => {
     let totalSum = arr.reduce((a, b)=>a+b);
     let parcialSum = 0;
     let evaluate = (ps, ts, k) => k == Math.abs(2 * ps - ts)

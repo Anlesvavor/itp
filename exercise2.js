@@ -24,7 +24,7 @@ function ex2(arr){
     let div3 = [];
     let div5 = [];
     let other = ['x'];
-    arr.forEach(l => {s
+    arr.forEach(l => {
         l % 5 == 0 ? div5.push(l) : l % 3 == 0 ? div3.push(l) : other.push(l);
     });
     other = heapsMethod(other);
@@ -36,6 +36,8 @@ function ex2(arr){
             return true;
         }
     }
+    console.log(div3);
+    console.log(div5);
     return false;
 }
 
